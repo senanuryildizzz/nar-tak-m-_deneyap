@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Afazi hastaları için konuma ve saate duyarlı iletişim asistanı, yaşam albümü ve acil durum butonu.">
+  <meta name="theme-color" content="#4f46e5">
+  <title>KonuşAnlat – Afazi İletişim Asistanı</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="bg-blob b1"></div>
+  <div class="bg-blob b2"></div>
+
+  <header class="topbar">
+    <div class="brand"><span class="logo">💬</span>
+      <div>
+        <h1>KonuşAnlat</h1><small>Afazi İletişim Asistanı</small>
+      </div>
+    </div>
+    <div class="clock" id="clock">--:--</div>
+  </header>
+
+  <main>
+    <!-- 1. AKILLI TAHMİN -->
+    <section id="smart" class="panel">
+      <div class="panel-head">
+        <h2>🧭 Neye ihtiyacın var?</h2>
+        <p id="ctxText" class="muted">🕒 …</p>
+      </div>
+      <div class="chips" id="placeChips" aria-label="Bulunduğun yer"></div>
+      <button class="ghost" id="gpsPlaceBtn">📍 Neredeyim? (GPS)</button>
+      <div class="cards" id="needCards"></div>
+    </section>
+
+    <!-- 2. ALBÜM -->
+    <section id="album" class="panel">
+      <div class="panel-head">
+        <h2>📸 Yaşam Albümüm</h2>
+        <p class="muted">Yakınlar, evin bölümleri, sevdiğin eşyalar ve evcil hayvanlar. Dokun, ismini duy.</p>
+      </div>
+      <div class="chips" id="albumFilter"></div>
+      <div class="finder">
+        <input id="finderInput" type="text" placeholder="Kelimeyi ararken ilk harfleri yaz… (örn: Ay)"
+          autocomplete="off">
+        <div id="suggest" class="suggest"></div>
+      </div>
+      <div class="grid" id="albumGrid"></div>
+      <details class="add">
+        <summary>➕ Yeni kişi / eşya ekle</summary>
+        <form id="addForm">
+          <label class="photo-pick"><input type="file" id="photoInput" accept="image/*" hidden><span
+              id="photoPreview">📷 Fotoğraf seç</span></label>
+          <input id="addName" placeholder="İsim (örn: Ayşe)" required>
+          <input id="addRel" placeholder="Kim / Ne? (örn: kızın)" required>
+          <select id="addCat">
+            <option value="people">👨‍👩‍👧 Yakınlar</option>
+            <option value="rooms">🏠 Ev bölümleri</option>
+            <option value="things">🧸 Eşyalar</option>
+            <option value="pets">🐶 Evcil hayvanlar</option>
+          </select>
+          <button class="primary" type="submit">Kaydet</button>
+        </form>
+      </details>
+    </section>
+
+    <!-- 3. ACİL -->
+    <section id="sos" class="panel sos-panel">
+      <div class="panel-head">
+        <h2>🚨 Acil Durum</h2>
+        <p class="muted">Tek dokunuş: konumun WhatsApp ile yakınına gider ve çevreye gösterilecek kart açılır.</p>
+      </div>
+      <button id="sosBtn" class="sos-btn" aria-label="Acil durum butonu"><span class="pulse"></span><span
+          class="pulse p2"></span><b>ACİL</b><small>YARDIM İSTE</small></button>
+      <div class="contact">
+        <label>Yakının numarası
+          <input id="phoneInput" type="tel" value="05309527049" inputmode="tel">
+        </label>
+        <div class="row">
+          <button class="ghost" id="smsBtn">💬 SMS olarak gönder</button>
+          <button class="ghost" id="cardBtn">🪪 Sadece kartı göster</button>
+        </div>
+        <p id="sosStatus" class="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Proje sunumu • Afazi hastaları için iletişim desteği</footer>
+
+  <!-- Tam ekran bilgi kartı -->
+  <div id="overlay" class="overlay" hidden>
+    <div class="aphasia-card">
+      <div class="big">🧡</div>
+      <h2>Ben afazi hastasıyım.</h2>
+      <p>Şu an konuşmakta zorlanıyorum.<br><strong>Lütfen bekleyin</strong> ve sakin olun.</p>
+      <p class="small" id="cardLoc"></p>
+      <button class="primary" id="closeCard">Kapat</button>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+
+</html>
