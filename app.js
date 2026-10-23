@@ -79,7 +79,7 @@ const CATS={all:'Hepsi',people:'👨‍👩‍👧 Yakınlar',rooms:'🏠 Ev',th
 const DEFAULT=[
   {id:1,name:'Hatice Zeynep',rel:'en yakın arkadaşın',cat:'people',emoji:'👩',photo:'img/hatice.jpg'},
   {id:2,name:'Figen Caymaz',rel:'Deneyap\'tan sınıf arkadaşın',cat:'people',emoji:'👩',photo:'img/figen.jpg'},
-  {id:3,name:'Elif Leya',rel:'okuldan arkadaşın',cat:'people',emoji:'👩',photo:'img/elif.jpg'},
+  {id:3,name:'Elif Leyla',rel:'okuldan arkadaşın',cat:'people',emoji:'👩',photo:'img/elif.jpg'},
   {id:4,name:'Mutfak',rel:'yemek yapılan yer',cat:'rooms',emoji:'🍳'},
   {id:5,name:'Yatak odası',rel:'uyuduğun yer',cat:'rooms',emoji:'🛏️'},{id:6,name:'Bardak',rel:'su içtiğin',cat:'things',emoji:'🥛'},
   {id:7,name:'Gözlük',rel:'okurken taktığın',cat:'things',emoji:'👓'},{id:8,name:'Pamuk',rel:'kedin',cat:'pets',emoji:'🐱',photo:'img/pamuk.jpg'}
